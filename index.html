@@ -319,8 +319,6 @@ footer{background:#08080A;border-top:1px solid var(--line)}
   body{background:#fff!important}
   .topbar,.hdr,.hero,.trust,footer,.scrim,.panel,.mmenu,.totop,#toasts,.pl-tools,.pl-note{display:none!important}
   #prices{background:#fff!important;border:none!important}
-  #prices .sec-head h2{color:#000!important;padding-inline-start:14px}
-  #prices .sec-head h2::before{background:#000!important}
   .pl-row{border-color:#ccc!important}
   .pl-n,.pl-price{color:#000!important}
   .reveal{opacity:1!important;transform:none!important}
@@ -773,7 +771,7 @@ grid.addEventListener('keydown', e=>{
  $('#printBtn').addEventListener('click', ()=>window.print());
  $('#plWaBtn').addEventListener('click', e=>{
   e.preventDefault();
-  sendWA('السلام عليكم، عايز أستعلم عن أصناف من قايمة أسعار ع السريع.', WA1);
+  sendWA('السلام عليكم، عايز أستعلم عن أصناف من قايمة أسعار ع السريع.', WA2);
 });
 
 function openDetail(n){
@@ -798,7 +796,7 @@ function openDetail(n){
       <p class="pd-note">عايز كمية كبيرة أو سعر جملة؟ كلم الإدارة مباشرة على 01023281583.</p>
     </div>`;
   $('#pdAdd').addEventListener('click', ()=>{ addToCart(p.n); closeAll(); setTimeout(()=>{ renderCart(); openPanel(cartPanel); },150); });
-  $('#pdAsk').addEventListener('click', ()=>sendWA(`السلام عليكم، عايز أستعلم عن الصنف رقم ${p.n}: ${p.name} (بالسعر المعلن ${fmt(p.price)} ج.م).`, WA1));
+  $('#pdAsk').addEventListener('click', ()=>sendWA(`السلام عليكم، عايز أستعلم عن الصنف رقم ${p.n}: ${p.name} (بالسعر المعلن ${fmt(p.price)} ج.م).`, WA2));
   pdPanel.scrollTop = 0;
   openPanel(pdPanel);
 }
@@ -881,7 +879,7 @@ function orderText(){
 }
  $('#sendWa').addEventListener('click', ()=>{
   if(!cart.length){ toast('قائمة الطلب فاضية — ضيف أصناف الأول'); return; }
-  sendWA(orderText(), WA1);
+  sendWA(orderText(), WA2);
 });
  $('#copyOrder').addEventListener('click', ()=>{
   if(!cart.length){ toast('قائمة الطلب فاضية — ضيف أصناف الأول'); return; }
